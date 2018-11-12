@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+                <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Chitkara Bus Management</title>
+         <link rel="icon" type="image/png" href="LOGO2.PNG" />
+         
+         <style>
+
+
+
+         </style>
+    </head>
+    <body>
+        
+        <header>
+            <div class="navbar-fixed">
+                <nav class="nav-wrapper blue-grey darken-3">
+                    <div class="container">
+                        <a href="#">
+                            
+                        </a>
+                        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </div>
+                    <div class="container">
+                        <ul class="right hide-on-med-and-down">
+                            <li><a class ="waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="LogOut" href="LogOutServlet2">
+                                    <i class="material-icons white-text right">logout</i>
+                                </a>
+                            </li>
+                        
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+            
+                
+            
+            <ul class="sidenav" id="mobile-links">
+                 <li><a class ="waves-effect waves-light" href="#">Account Info
+                        <i class="material-icons black-text left">account_circle</i>
+                    </a>
+                </li>
+                <li><a class ="waves-effect waves-light" href="LogOutServlet2">LOGOUT
+                        <i class="material-icons black-text left">logout</i>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <div class="container s12 m6">
+            <h3>Welcome to Chitakra Bus Management Website</h3>
+        </div>
+
+        <div class="container z-depth-2">
+            <div class="row">
+                <div class="col s12 l6">
+                    <div class="card small blue-grey darken-1">
+                        <div class="card-image">
+                            <img src="user2.png" class="container"style="height:200px; width:300px;">
+                            
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Student Details</span>
+                            <p>Some content</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Link1</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6">
+                    <div class="card  small blue-grey darken-1">
+                        <div class="card-image">
+                            <img src="user2.png" class="container"style="height:200px; width:300px;">
+                            
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Driver Details</span>
+                            <p>Some content</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Link1</a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col s12 l6">
+                    <div class="card  small blue-grey darken-1">
+                        <div class="card-image">
+                            <img src="user2.png" class="container"style="height:200px; width:300px;">
+                            
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Route Info</span>
+                            <p>Some content</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Link1</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6">
+                    <div class="card  small blue-grey darken-1">
+                        <div class="card-image">
+                            <img src="user2.png" class="container"style="height:200px; width:300px;">
+                            
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Fine/Fee details</span>
+                            <p>Some content</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Link1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+              $(document).ready(function(){
+                $('.tooltipped').tooltip();
+                });
+               $(document).ready(function(){
+                $('.sidenav').sidenav();
+                });
+                $('.dropdown-trigger').dropdown();
+ 
+            
+        </script>
+    </body>
+</html>
