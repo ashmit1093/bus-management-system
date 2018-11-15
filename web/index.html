@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <script src="https://use.fontawesome.com/7ab33ef109.js"></script>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
@@ -22,8 +23,7 @@
             line-height: 55px;
         }
         
-        .logo
-        {
+        .logo{
             height:55px;
             width:55px;
         }
@@ -34,6 +34,9 @@
         }
         main {
             flex: 1 0 auto;
+        }
+        html{
+            line-height: 1.5;
         }
     </style>
     
@@ -46,19 +49,17 @@
     
         <header>
             <div class="navbar-fixed">
-                <nav class="nav-wrapper blue-grey darken-3">
+                <nav class="nav-wrapper blue-grey darken-2">
                     
                     <div class="container">
-                        <a href="#">
-                            
-                        </a>
                         <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                        <i class="material-icons">menu</i>
+                            <i class="material-icons">menu</i>
+                        </a>
                     </div>
                     <div class="container">
                         <ul class="right hide-on-med-and-down">
                             <li class="waves-effect waves-light">
-                                <a class="waves-effect waves-light  modal-trigger blue-grey darken-3 center modal-close" href="#modal1">About
+                                <a class="waves-effect waves-light  modal-trigger  center modal-close" href="#modal1">About
                                     <i class="material-icons white-text left ">info</i>
                                 </a>
                                 <div id="modal1" class="modal">
@@ -82,7 +83,7 @@
                             </li>
                             
                             <li class="waves-effect waves-light">
-                                <a class="waves-effect waves-light  modal-trigger blue-grey darken-3 center modal-close" href="#modal3">Contact Us
+                                <a class="waves-effect waves-light  modal-trigger  center modal-close" href="#modal3">Contact Us
                                   <i class="material-icons white-text left ">contacts</i>
                                 </a>
     
@@ -177,66 +178,62 @@
         </header> 
         
         <form action="LoginServlet2" method="post">
-        <div class="row login">
-            <div class="col s12  l4 offset-l4 ">
-                <div class="card z-depth-4 ">
-                
-                    <div class="card-action blue-grey darken-1 center">
-                        <img src="CU.png" class="responsive-img">
-                    </div>
-                
-                    <div class="card-content small">
-                        <div class="input-field black-text">
-                            <i class="material-icons prefix ">account_circle</i>
-                            <label for="username">Username</label>
-                            <input name ="id"type="text"id="username" data-length="10" class="validate">
+            <div class="row login">
+                <div class="col s12  l4 offset-l4 ">
+                    <div class="card z-depth-4 ">
+                        <div class="card-action blue-grey darken-1 center">
+                            <img src="CU.png" class="responsive-img">
                         </div>
-                    </div>
                     
-                    <!--
-                    <div class="card-content">
-                        <div class="input-field black-text ">
-                            
-                            <i class="material-icons prefix ">view_list</i>
-                            <label>Institute</label><br>
-                            <select class="browser default" name="institute">
-                                <option value="1">CSOET</option>>
-                                <option value="2">CBS</option>
-                                <option value="3">CSPS</option>
-                              
-                           </select>
+                        <div class="card-content">
+                            <div class="input-field black-text col s12 ">
+                                <i class="material-icons prefix ">account_circle</i>
+                                <label for="username">Username</label>
+                                <input name ="id"type="text"id="username" data-length="10" class="validate">
+                            </div>
                         </div>
-                    </div>
-                    -->
-                    
-                    
-                    <div class="card-content ">
-                        <div class="input-field back-text ">
-                            <i class="material-icons prefix ">lock</i>
-                            <label for="pass">Password</label>
-                            <input type="password"id="pass" name="pass" class="validate">
-                        </div>
-                    </div>
-                
-               
-                
-                    <div class="card-content center">
-                        <div class="input-field ">
-                           
-                            <button class="btn-large blue-grey darken-1 black-text z-depth-2 waves-effect waves-light">Login
-                                <i class="material-icons right black-text">send</i>
-                            </button>
-                        </div>
-                    </div>
-                    
 
+                    
+                    
+                        <div class="card-content">
+                    
+                            <div class="input-field back-text col s12">
+                            
+                                <i class="material-icons prefix ">lock</i>
+                                <label for="pass">Password</label>
+                                <input type="password"id="pass" name="pass">
+                            
+                            </div>    
+                        </div>
+
+                        <div class="card-content">
+                            <div class="input-field black-text col s12 ">
+                            
+                                <i class="material-icons prefix ">view_list</i>
+                                <label>Institute</label><br>
+                                <select>
+                                    <option value="1">CSOET</option>>
+                                    <option value="2">CBS</option>
+                                    <option value="3">CSPS</option>
+                              
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-content center">
+                            <div class="input-field ">
+                           
+                                <button class="btn-large blue-grey darken-1 black-text z-depth-2 waves-effect waves-light center">Login
+                                   <i class="fa fa-sign-in right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>  
+            </div>  
         </form>
         
         
-        <footer class="page-footer blue-grey darken-4" style="position:fixed;bottom:0px;left:0;width:100%;">
+        <footer class="page-footer blue-grey darken-4 " style="position: fixed;bottom:0px;left:0;width:100%;">
            <div class="footer-copyright">
             <div class="container center-align">
                 &copy; 2018 CHITKARA UNIVERSITY

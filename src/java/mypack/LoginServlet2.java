@@ -46,6 +46,7 @@ public class LoginServlet2 extends HttpServlet {
                 
                 
                 response.sendRedirect("landing.html");
+                out.println("id is "+id);
                 
             } 
             else {
