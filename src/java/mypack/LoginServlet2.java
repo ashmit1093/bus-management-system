@@ -101,7 +101,7 @@ public class LoginServlet2 extends HttpServlet {
                     out.println("swal('incorrect id or password!',' ','error');");
                     out.println("});");
                     out.println("</script>");
-                    RequestDispatcher rd = request.getRequestDispatcher("newjsp.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("Index.jsp");
                     rd.include(request,response);
                 } 
                 
