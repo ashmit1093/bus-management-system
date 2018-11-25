@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/landing.html</file>
-            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/index.html</file>
-            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/LogOutServlet2.java</file>
-            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/LoginServlet2.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/Drivers.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/DriverDetails.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/StudentDetails.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/newjsp.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/Driver_detail.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/landingjsp.jsp</file>
         </group>
     </open-files>
 </project-private>

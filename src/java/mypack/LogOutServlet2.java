@@ -12,13 +12,12 @@ public class LogOutServlet2 extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response)  
                                 throws ServletException, IOException {  
             response.setContentType("text/html");  
-            PrintWriter out=response.getWriter(); 
-             
+            PrintWriter out=response.getWriter();   
               
-            request.getRequestDispatcher("index.html").include(request, response);  
-              
-            HttpSession session=request.getSession();  
+            HttpSession session=request.getSession();
+            session.removeAttribute("username");
             session.invalidate();  
+            response.sendRedirect("Index.jsp");
               
              
               

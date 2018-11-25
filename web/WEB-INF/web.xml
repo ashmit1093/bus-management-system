@@ -12,6 +12,34 @@
         <servlet-name>LogOutServlet2</servlet-name>
         <servlet-class>mypack.LogOutServlet2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogInServlet3</servlet-name>
+        <servlet-class>LogInServlet3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentDetails</servlet-name>
+        <servlet-class>mypack.StudentDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentDetail</servlet-name>
+        <servlet-class>mypack.StudentDetail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDetails</servlet-name>
+        <servlet-class>mypack.AdminDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RouteDetails</servlet-name>
+        <servlet-class>RouteDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RouteDetail</servlet-name>
+        <servlet-class>mypack.RouteDetail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Driver_detail</servlet-name>
+        <servlet-class>mypack.Driver_detail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet2</servlet-name>
         <url-pattern>/LoginServlet2</url-pattern>
@@ -23,6 +51,34 @@
     <servlet-mapping>
         <servlet-name>LogOutServlet2</servlet-name>
         <url-pattern>/LogOutServlet2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogInServlet3</servlet-name>
+        <url-pattern>/LogInServlet3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentDetails</servlet-name>
+        <url-pattern>/StudentDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentDetail</servlet-name>
+        <url-pattern>/StudentDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDetails</servlet-name>
+        <url-pattern>/AdminDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RouteDetails</servlet-name>
+        <url-pattern>/RouteDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RouteDetail</servlet-name>
+        <url-pattern>/RouteDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Driver_detail</servlet-name>
+        <url-pattern>/Driver_detail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -32,30 +32,86 @@ public class LoginServlet2 extends HttpServlet {
         PrintWriter out = response.getWriter();
         String id = request.getParameter("id");
         String pass = request.getParameter("pass");
-        String institute = request.getParameter("institute");
+        
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
-            
-            PreparedStatement pst = conn.prepareStatement("Select id,pass from login_credentials where id=? and pass=?");
-            pst.setString(1, id);
-            pst.setString(2, pass);
+             
+            PreparedStatement pst = conn.prepareStatement("Select * from login_credentials");
+    
             ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-                
-                
-                response.sendRedirect("landing.html");
-                out.println("id is "+id);
-                
-            } 
-            else {
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('User or password incorrect');");
-                    out.println("location='index.html';");
+             int x = 0;
+
+                while (rs.next()) {
+
+                    if ((rs.getString("id").equals(id)) && rs.getString("pass").equals(pass)) {
+
+                        String stp = rs.getString("roleDb");
+
+                        if (stp.equals("admin")) {
+
+                            x = 1;
+
+                            break;
+
+                        } else if(stp.equals("teacher")) {
+
+                            x = 2;
+
+                            break;
+
+                        }
+                        else if(stp.equals("student"))
+                        {
+                            x=3;
+                        }
+
+                    }
+
+                }
+
+
+                if(x==3){
+                HttpSession session = request.getSession();
+                session.setAttribute("username",id);
+                session.setMaxInactiveInterval(10*60);
+                response.sendRedirect("landingjsp.jsp");
+                }
+                else if(x==1)
+                {
+                HttpSession session = request.getSession();
+                session.setAttribute("username",id);
+                session.setMaxInactiveInterval(10*60);
+                response.sendRedirect("adminLanding.jsp");
+                }
+                else if(x==2)
+                {
+                HttpSession session = request.getSession();
+                session.setAttribute("username",id);
+                session.setMaxInactiveInterval(10*60);
+               
+                response.sendRedirect("Teacher.jsp");  
+                }
+               else {
+                    out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+                    out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
+                    out.println("<script>");
+                    out.println("$(document).ready(function(){");
+                    out.println("swal('incorrect id or password!',' ','error');");
+                    out.println("});");
                     out.println("</script>");
+                    RequestDispatcher rd = request.getRequestDispatcher("newjsp.jsp");
+                    rd.include(request,response);
                 } 
-            } 
+                
+                
+                
+
+            
+
+            }
+        
         catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

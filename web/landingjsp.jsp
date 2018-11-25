@@ -1,12 +1,14 @@
+<%-- 
+    Document   : landingjsp
+    Created on : 15 Nov, 2018, 10:48:10 PM
+    Author     : ashmitbakshi
+--%>
+
+<%@page  language="java"contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
     <head>
-                <!--Import Google Icon Font-->
+
+        <!--Import Google Icon Font-->
         <script src="https://use.fontawesome.com/7ab33ef109.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
@@ -14,6 +16,7 @@ and open the template in the editor.
         
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Chitkara Bus Management</title>
          <link rel="icon" type="image/png" href="LOGO2.PNG" />
          
@@ -48,6 +51,22 @@ and open the template in the editor.
          </style>
     </head>
     <body>
+    
+        <%
+            
+            response.setHeader("Cache-Control","no-cache,no-store,must-revalidate"); //HTTP 1.1
+            
+            response.setHeader("Pragma", "no-cache");//HTTP 1.0s
+            
+            response.setHeader("Expires", "0");
+            
+            
+            
+            if(session.getAttribute("username")==null)
+            {
+                response.sendRedirect("Index.jsp");
+            }
+        %>
         
         <header>
             <div class="navbar-fixed">
@@ -74,19 +93,26 @@ and open the template in the editor.
                         </div>
                         <i class="fa fa-user-circle-o fa-4x black-text"></i>
 
-                        <span class=" name">Ashmit Bakshi</span>
-                        <span class="id">1611981093</span>
+                        <span class=" name">${name}</span>
+                        <span class="id">${username}</span>
                  
                     </div>
                 </li>
                 
                 <li>
                   
-                    <a class="waves-effect container " href="#!">FeedBack
+                    <a class="waves-effect container " href="FeedBack.jsp">FeedBack
                         <i class="fa fa-comment fa-2x black-text"></i>
                     </a>
                 </li>
-                     <li>
+                <li>
+                  
+                    <a class="waves-effect container " href="Guidelines.jsp">Guidelines
+                        <i class="fa fa-list-alt fa-2x black-text" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+                <li>
                   
                     <a class="waves-effect container " href="LogOutServlet2">Sign Out
                         <i class="fa fa-sign-out fa-2x black-text"></i>
@@ -106,7 +132,7 @@ and open the template in the editor.
         
         
         <div class="container services">
-            <h5 class="center black-text">Welcome 1611981093 </h5>
+            <h5 class="center black-text">Welcome ${username} </h5>
             <div class="row">
                 <div class="col s12 m6 l4 center-align">
                     
@@ -121,7 +147,7 @@ and open the template in the editor.
                         </div>
                         
                         <div class="card-action" >
-                            <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                            <a href="StudentDetail" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
                                     <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -141,7 +167,7 @@ and open the template in the editor.
                         </div>
                         
                         <div class="card-action" >
-                            <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                            <a href="RouteDetails.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -150,115 +176,89 @@ and open the template in the editor.
            
             
                 <div class="col s12 m6 l4 center-align">
-                        <div class="card z-depth-3">
-                            <div class="card-content">
-                                <i class="fa fa-id-card-o fa-4x" aria-hidden="true"></i>
-                                <h5> Driver-Details</h5>
-                                <p>
-                                    Driver Phone-number,
-                                    Bus Allocated
-                                </p>
-                            </div>
-                        
-                            <div class="card-action" >
-                                <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
-                                    <i class="material-icons">add</i>
-                                </a>
-                            </div>
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <i class="fa fa-id-card-o fa-4x" aria-hidden="true"></i>
+                            <h5> Driver-Details</h5>
+                            <p>
+                                Driver Phone-number,
+                                Bus Allocated
+                            </p>
                         </div>
+                        
+                        <div class="card-action" >
+                            <a href="Driver_detail" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="col s12 m6 l4 center-align">
-                 
-                        <div class="card z-depth-3">
-                            <div class="card-content">
-                                <i class="fa fa-inr fa-4x"></i>
-                                <h5>Fee-Details</h5>
-                                <p>
-                                    Fee Status-paid/due
-                                   
-                                </p>
-                            </div>
-                        
-                            <div class="card-action" >
-                                <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
-                                    <i class="material-icons">add</i>
-                                </a>
-                            </div>
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <i class="fa fa-inr fa-4x"></i>
+                            <h5>Fee-Details</h5>
+                            <p>
+                                Fee Status-paid/due
+                            </p>
                         </div>
-                </div>
-                                <div class="col s12 m6 l4 center-align">
-                 
-                        <div class="card z-depth-3">
-                            <div class="card-content">
-                                <i class="fa fa-money fa-4x"></i>
-                                <h5>Fine-Details</h5>
-                                <p>
-                                    Fine Status-paid/due
-                                    
-                                </p>
-                            </div>
                         
-                            <div class="card-action" >
-                                <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
-                                    <i class="material-icons">add</i>
-                                </a>
-                            </div>
+                        <div class="card-action" >
+                            <a href="FeeDetails.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                                <i class="material-icons">add</i>
+                            </a>
                         </div>
+                    </div>
                 </div>
-                                <div class="col s12 m6 l4 center-align">
-                 
-                        <div class="card z-depth-3">
-                            <div class="card-content">
-                                <i class="fa fa-bus fa-4x"></i>
-                                <h5> Notice</h5>
-                                <p>
-                                    Placement Drive,Outings
-                                </p>
-                            </div>
-                        
-                            <div class="card-action" >
-                                <a href="#" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
-                                    <i class="material-icons">add</i>
-                                </a>
-                            </div>
+                <div class="col s12 m6 l4 center-align">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <i class="fa fa-money fa-4x"></i>
+                            <h5>Fine-Details</h5>
+                            <p>
+                                Fine Status-paid/due
+                            </p>
                         </div>
+                        <div class="card-action" >
+                            <a href="FineDetails.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                
-       
-                
-            </div>
+                <div class="col s12 m6 l4 center-align">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <i class="fa fa-bus fa-4x"></i>
+                            <h5> Notice</h5>
+                            <p>
+                                Placement Drive,Outings
+                            </p>
+                        </div>
+                        <div class="card-action" >
+                            <a href="Notice.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
         </div>
-        </div>
-         
-       
- 
-            
-        
-        
-        
-
- 
-        
-        
-       
-                            
-        
-        
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script>
-              $(document).ready(function(){
-                $('.tooltipped').tooltip();
-                });
-              $(document).ready(function(){
-                $('.sidenav')
-                    .sidenav()
-                    .on('click tap', 'li a', () => {
-                $('.sidenav').sidenav('close');
-                    });
-                });
-            </script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.tooltipped').tooltip();
+        });
+        $(document).ready(function(){
+            $('.sidenav')
+            .sidenav()
+            .on('click tap', 'li a', () => {
+        $('.sidenav').sidenav('close');
+            });
+        });
+    </script>
     </body>
+    
 </html>
