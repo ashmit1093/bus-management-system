@@ -9,6 +9,7 @@ import com.oracle.jrockit.jfr.DataType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,68 +32,62 @@ import static org.omg.CORBA.ShortSeqHelper.id;
  *
  * @author ashmitbakshi
  */
-public class RouteDetail extends HttpServlet {
+public class Add_bus extends HttpServlet {
 
      @Override
-     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-         ArrayList<Route> rlist = new ArrayList<Route>();
-      
+        
+        
+        String n = request.getParameter("bus_number");
+        String o = request.getParameter("bus_color");
+        String p = request.getParameter("bus_reg_year");
+        String q = request.getParameter("bus_capacity");
+        String r = request.getParameter("bus_engine");
+        String s = request.getParameter("bus_weight");
+
+        
+          if (n.isEmpty() || o.isEmpty() || p.isEmpty() || q.isEmpty() || r.isEmpty() || s.isEmpty() ) {
+              
+                    
+             
+            RequestDispatcher rd = request.getRequestDispatcher("AddBus.jsp");
+            
+            rd.include(request, response);
+          }
         
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
              
-            HttpSession session = request.getSession();
-            String var = (String) session.getAttribute("username");
+           
             
             
             
-            PreparedStatement pst = conn.prepareStatement("Select * from Route_details where id="+var+"");
-            ResultSet rs = pst.executeQuery();
-            while (rs.next()) {
-            
-                Route r = new Route();
-                r.id=rs.getString(1);
-                r.route_id=rs.getString(2);
-                r.stop1=rs.getString(3);
-                r.stop2=rs.getString(4);
-                r.stop3=rs.getString(5);
-                r.stop4=rs.getString(6);
-                r.Arrival1=rs.getString(7);
-                r.Arrival2=rs.getString(8);
-                r.Arrival3=rs.getString(9);
-                r.Arrival4=rs.getString(10);
-                r.Dep1=rs.getString(11);
-                r.Dep2=rs.getString(12);
-                r.Dep3=rs.getString(13);
+           String sql_query = "INSERT INTO bus_details values(?,?,?,?,?,?)";
+           PreparedStatement pst = conn.prepareStatement(sql_query);
+           
+            pst.setString(1,n);
+            pst.setString(2,o);
+            pst.setString(3,p);
+            pst.setString(4,q);
+            pst.setString(5,r);
+            pst.setString(6,s);
 
-                
-                rlist.add(r);
-
-
+            
+            int i = pst.executeUpdate();
+            if(i>0)
+            {
+                out.println("Registered");
             }
-            request.setAttribute("routelist",rlist);
-    conn.close();
-
-    RequestDispatcher rd=request.getRequestDispatcher("RouteDetails.jsp");
-    rd.forward(request,response);
             
-            
-       
-            
-
-        
-
-             
-            
-
-            } 
+        }
         catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+        
 
 
      }

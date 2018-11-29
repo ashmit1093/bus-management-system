@@ -58,6 +58,22 @@
             </div>
             
         </header>
+                
+       <div class="container">
+            <div class="row">
+                <div class='col s12 m12 l12 '>
+                    <table class=" white z-depth-4 centered  striped" style="border:1px solid black;">
+                        <tbody>
+                   
+                            <h5 class="center-align" style="font-size:25px;">No New Notice</h5>
+                               
+                          
+ 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>   
+            </div>  
                         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>

@@ -9,6 +9,8 @@ package mypack;
  *
  * @author ashmitbakshi
  */
-interface Filter {
+public class Bus {
+    
+    public String bus_number,bus_color,bus_reg_year,bus_capacity,bus_engine,bus_weight;
     
 }

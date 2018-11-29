@@ -9,10 +9,13 @@ import com.oracle.jrockit.jfr.DataType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -29,12 +32,13 @@ import static org.omg.CORBA.ShortSeqHelper.id;
  *
  * @author ashmitbakshi
  */
-public class AdminDetails extends HttpServlet {
+public class AdminBus extends HttpServlet {
 
      @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+         ArrayList<Bus> blist = new ArrayList<Bus>();
       
         
         
@@ -45,11 +49,40 @@ public class AdminDetails extends HttpServlet {
             HttpSession session = request.getSession();
             String var = (String) session.getAttribute("username");
             
-            PreparedStatement pst = conn.prepareStatement("Select * from login_credentials where id="+var+"");
+            
+            
+            PreparedStatement pst = conn.prepareStatement("Select * from bus_details");
             ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                
+               Bus b = new Bus();
+               b.bus_number=rs.getString(1);
+               b.bus_color=rs.getString(2);
+               b.bus_reg_year=rs.getString(3);
+               b.bus_capacity=rs.getString(4);
+               b.bus_engine=rs.getString(5);
+               b.bus_weight=rs.getString(6);
+             
+               
+               blist.add(b);
+             
+        
+            }
+            request.setAttribute("buslist",blist);
+    conn.close();
+
+    RequestDispatcher rd=request.getRequestDispatcher("RegisteredBus.jsp");
+    rd.forward(request,response);
+          
             
 
             
+            
+       
+            
+
+        
+
              
             
 

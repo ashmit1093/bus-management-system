@@ -36,7 +36,7 @@ public class LoginServlet2 extends HttpServlet {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
              
             PreparedStatement pst = conn.prepareStatement("Select * from login_credentials");
     
@@ -55,13 +55,9 @@ public class LoginServlet2 extends HttpServlet {
 
                             break;
 
-                        } else if(stp.equals("teacher")) {
+                        } 
 
-                            x = 2;
-
-                            break;
-
-                        }
+                        
                         else if(stp.equals("student"))
                         {
                             x=3;
@@ -85,14 +81,7 @@ public class LoginServlet2 extends HttpServlet {
                 session.setMaxInactiveInterval(10*60);
                 response.sendRedirect("adminLanding.jsp");
                 }
-                else if(x==2)
-                {
-                HttpSession session = request.getSession();
-                session.setAttribute("username",id);
-                session.setMaxInactiveInterval(10*60);
-               
-                response.sendRedirect("Teacher.jsp");  
-                }
+              
                else {
                     out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
                     out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");

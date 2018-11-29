@@ -26,7 +26,7 @@
         <title>JSP Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <style>
+         <style>
             body
             {
                 background: #eceff1;
@@ -35,16 +35,20 @@
             {
                 padding: 15px;
                 text-align: left;
-                font-size: 20px !important;
+                font-size: 15px !important;
                 
                 
             }
-            table td 
+            table td ,tr,th
             {
                 border-left: 1px solid #000;
                 border-right: 1px solid #000;
             }
-            tr:hover {background-color:#cfd8dc;}
+            tr:hover 
+            {
+                background-color:#cfd8dc;
+            }
+            
         </style>
     </head>
     <body>

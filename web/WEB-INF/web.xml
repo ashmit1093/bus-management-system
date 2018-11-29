@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>AdminDetails</servlet-name>
-        <servlet-class>mypack.AdminDetails</servlet-class>
+        <servlet-class>mypack.Admin_Details</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RouteDetails</servlet-name>
@@ -39,6 +39,30 @@
     <servlet>
         <servlet-name>Driver_detail</servlet-name>
         <servlet-class>mypack.Driver_detail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDetail</servlet-name>
+        <servlet-class>mypack.Admindetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>detail</servlet-name>
+        <servlet-class>mypack.detail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDrivers</servlet-name>
+        <servlet-class>mypack.AdminDrivers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_drivers</servlet-name>
+        <servlet-class>mypack.Add_drivers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminBus</servlet-name>
+        <servlet-class>mypack.AdminBus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_bus</servlet-name>
+        <servlet-class>mypack.Add_bus</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet2</servlet-name>
@@ -79,6 +103,30 @@
     <servlet-mapping>
         <servlet-name>Driver_detail</servlet-name>
         <url-pattern>/Driver_detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDetail</servlet-name>
+        <url-pattern>/AdminDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>detail</servlet-name>
+        <url-pattern>/detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDrivers</servlet-name>
+        <url-pattern>/AdminDrivers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_drivers</servlet-name>
+        <url-pattern>/Add_drivers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminBus</servlet-name>
+        <url-pattern>/AdminBus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_bus</servlet-name>
+        <url-pattern>/Add_bus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

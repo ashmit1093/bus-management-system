@@ -31,13 +31,13 @@ import static org.omg.CORBA.ShortSeqHelper.id;
  *
  * @author ashmitbakshi
  */
-public class RouteDetail extends HttpServlet {
+public class detail extends HttpServlet {
 
      @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-         ArrayList<Route> rlist = new ArrayList<Route>();
+         ArrayList<Admin> alist = new ArrayList<Admin>();
       
         
         
@@ -50,34 +50,29 @@ public class RouteDetail extends HttpServlet {
             
             
             
-            PreparedStatement pst = conn.prepareStatement("Select * from Route_details where id="+var+"");
+            PreparedStatement pst = conn.prepareStatement("Select * from admin_details where admin_id=?");
+            pst.setString(1,var);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
             
-                Route r = new Route();
-                r.id=rs.getString(1);
-                r.route_id=rs.getString(2);
-                r.stop1=rs.getString(3);
-                r.stop2=rs.getString(4);
-                r.stop3=rs.getString(5);
-                r.stop4=rs.getString(6);
-                r.Arrival1=rs.getString(7);
-                r.Arrival2=rs.getString(8);
-                r.Arrival3=rs.getString(9);
-                r.Arrival4=rs.getString(10);
-                r.Dep1=rs.getString(11);
-                r.Dep2=rs.getString(12);
-                r.Dep3=rs.getString(13);
-
+                Admin a = new Admin();
+                a.admin_id=rs.getString(1);
+                a.admin_name=rs.getString(2);
+                a.admin_email=rs.getString(3);
+                a.admin_number=rs.getString(4);
+                a.admin_country=rs.getString(5);
+                a.admin_state=rs.getString(6);
+                a.admin_city=rs.getString(7);
+                a.admin_pincode=rs.getString(8);
                 
-                rlist.add(r);
+                alist.add(a);
 
 
             }
-            request.setAttribute("routelist",rlist);
+            request.setAttribute("adminlist",alist);
     conn.close();
 
-    RequestDispatcher rd=request.getRequestDispatcher("RouteDetails.jsp");
+    RequestDispatcher rd=request.getRequestDispatcher("admindetails.jsp");
     rd.forward(request,response);
             
             

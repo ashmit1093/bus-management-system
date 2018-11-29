@@ -1,12 +1,15 @@
 <%-- 
-    Document   : DriverDetails
-    Created on : 16 Nov, 2018, 11:03:54 AM
+    Document   : StudentDetails
+    Created on : 16 Nov, 2018, 10:54:55 AM
     Author     : ashmitbakshi
 --%>
 
+
+<%@page import="mypack.Admin"%>
+<%@page import="java.awt.print.Book"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="mypack.Drivers"%>
+<%@ page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,9 +27,8 @@
          <link rel="icon" type="image/png" href="LOGO2.PNG" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-         <style>
+        
+        <style>
             body
             {
                 background: #eceff1;
@@ -39,20 +41,16 @@
                 
                 
             }
-            table td ,tr,th
+            table td 
             {
                 border-left: 1px solid #000;
                 border-right: 1px solid #000;
             }
-            tr:hover 
-            {
-                background-color:#cfd8dc;
-            }
-            
+            tr:hover {background-color:#cfd8dc;}
         </style>
     </head>
     <body>
-        <%
+         <%
             
             response.setHeader("Cache-Control","no-cache,no-store,must-revalidate"); //HTTP 1.1
             
@@ -66,22 +64,26 @@
             {
                 response.sendRedirect("Index.jsp");
             }
-            ArrayList<Drivers> driver=(ArrayList)request.getAttribute("driverlist");
-            Iterator it = driver.iterator();
+            
+            ArrayList<Admin> admin = (ArrayList)request.getAttribute("adminlist");
+            Iterator it = admin.iterator();
             while(it.hasNext())
             {
+                Admin a =(Admin)it.next();
                 
-                Drivers d =(Drivers)it.next();
+            
             
         %>
+                
+     
+    
+    </tr>
         <header>
             <div class="navbar-fixed">
-                
-                
-                <nav class="nav-wrapper blue-grey darken-3">
+                <nav class="nav-wrapper blue-grey darken-3 navbar-fixed">
                     <div class="container">
                         <ul class="left hide-on-small-only">
-                            <li><a class ="waves-effect waves-light tooltipped"  data-position="bottom" data-tooltip="Home" href="landingjsp.jsp">
+                            <li><a class ="waves-effect waves-light tooltipped"  data-position="bottom" data-tooltip="Home" href="adminLanding.jsp">
                                     <i class="material-icons" style="font-size:35px;">arrow_back</i>
                                 </a>
                             </li>
@@ -90,6 +92,7 @@
                     </div>
                 </nav>
             </div>
+            
         </header>
         <div class="container">
             <div class="row">
@@ -103,52 +106,57 @@
                     
                             <tr>
                         
-                                <td class="flow-text"><strong>Driver-ID </strong></td>
-                                <td class="flow-text"><%=d.driver_id%></td>
+                                <td class="flow-text"><strong>Admin-ID </strong></td>
+                                <td class="flow-text"><%=a.admin_id%></td>
                         
                             </tr>
                             <tr>
-                                <td class="flow-text"><strong>Driver-Name </strong></td>
-                                <td class="flow-text"><%=d.driver_name%></td>
+                                <td class="flow-text"><strong>Admin-Name </strong></td>
+                                <td class="flow-text"><%=a.admin_name%></td>
                         
                                 </tr>
                                 <tr>
-                                    <td class="flow-text"><strong>Driver-Contact </strong></td></b>
-                                    <td class="flow-text"><%=d.driver_number%></td>
+                                    <td class="flow-text"><strong>Admin-Contact </strong></td></b>
+                                    <td class="flow-text"><%=a.admin_number%></td>
                         
                                 </tr>
                                 <tr>
-                                    <td class="flow-text"><strong>Driver-Family-Contact </strong></td></b>
-                                    <td class="flow-text"><%=d.driver_fam_contact%></td>
+                                    <td class="flow-text"><strong>Admin E-mail </strong></td></b>
+                                    <td class="flow-text"><%=a.admin_email%></td>
                         
                                 </tr>
                                 <tr>
-                                    <td class="flow-text"><strong>Driver-Blood-Group </strong></td></b>
-                                    <td class="flow-text"><%=d.driver_blood_group%></td>
+                                    <td class="flow-text"><strong> Country </strong></td></b>
+                                    <td class="flow-text"><%=a.admin_country%></td>
                         
                                 </tr>
                     
                                 <tr>
-                                    <td class="flow-text"><strong>Bus-Route-Number </strong></td>
-                                    <td class="flow-text"><%=d.bus_route%></td>
+                                    <td class="flow-text"><strong> State </strong></td>
+                                    <td class="flow-text"><%=a.admin_state%></td>
                                 </tr>
                                 <tr>
-                                    <td class="flow-text"><strong>Bus-Number</strong></td>
-                                    <td class="flow-text"><%=d.bus_number%></td>
+                                    <td class="flow-text"><strong> Pincode</strong></td>
+                                    <td class="flow-text"><%=a.admin_pincode%></td>
                                 </tr>
-                                <tr>
-                                    <td class="flow-text"><strong>Bus-Capacity</strong></td>
-                                    <td class="flow-text"><%=d.bus_capacity%></td>
-                                </tr>    
+ 
                             </tbody>
                         </table>
                     </div>
                 </div>   
             </div>                    
-        <%
-            }
-        %>
-          
+            <%
+                }
+             %>   
+                        
+  
+        
+   
+       
+        
+
+       
+                        
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script>
@@ -162,14 +170,16 @@
                 $('.sidenav').sidenav('close');
                     });
                 });
-        </script>      
-                        
-        <footer class="white-text blue-grey darken-4 " style="position: fixed;bottom:0px;left:0;width:100%;height:20px; font-size: 12px;">
+        </script>  
+                
+        <footer class="white-text blue-grey darken-4 " style="position: fixed;bottom:0px;left:0;width:100%;height: 15px; font-size: 12px;">
            <div class="footer-copyright">
             <div class="container center-align">
                 &copy; 2018 CHITKARA UNIVERSITY
             </div>
           </div>
         </footer>
+            
+        
     </body>
 </html>

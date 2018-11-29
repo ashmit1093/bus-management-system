@@ -9,6 +9,7 @@ import com.oracle.jrockit.jfr.DataType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,13 +32,13 @@ import static org.omg.CORBA.ShortSeqHelper.id;
  *
  * @author ashmitbakshi
  */
-public class RouteDetail extends HttpServlet {
+public class AdminDrivers extends HttpServlet {
 
      @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-         ArrayList<Route> rlist = new ArrayList<Route>();
+         ArrayList<Drivers> dlist = new ArrayList<Drivers>();
       
         
         
@@ -50,35 +51,32 @@ public class RouteDetail extends HttpServlet {
             
             
             
-            PreparedStatement pst = conn.prepareStatement("Select * from Route_details where id="+var+"");
+            PreparedStatement pst = conn.prepareStatement("Select * from driver_detail");
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-            
-                Route r = new Route();
-                r.id=rs.getString(1);
-                r.route_id=rs.getString(2);
-                r.stop1=rs.getString(3);
-                r.stop2=rs.getString(4);
-                r.stop3=rs.getString(5);
-                r.stop4=rs.getString(6);
-                r.Arrival1=rs.getString(7);
-                r.Arrival2=rs.getString(8);
-                r.Arrival3=rs.getString(9);
-                r.Arrival4=rs.getString(10);
-                r.Dep1=rs.getString(11);
-                r.Dep2=rs.getString(12);
-                r.Dep3=rs.getString(13);
-
                 
-                rlist.add(r);
-
-
+               Drivers d = new Drivers();
+               d.driver_id=rs.getString(2);
+               d.driver_name=rs.getString(3);
+               d.driver_number=rs.getString(4);
+               d.driver_blood_group=rs.getString(5);
+               d.driver_fam_contact=rs.getString(6);
+               d.bus_route=rs.getString(7);
+               d.bus_number=rs.getString(8);
+               d.bus_capacity=rs.getString(9);
+               
+               dlist.add(d);
+             
+        
             }
-            request.setAttribute("routelist",rlist);
+            request.setAttribute("driverlist",dlist);
     conn.close();
 
-    RequestDispatcher rd=request.getRequestDispatcher("RouteDetails.jsp");
+    RequestDispatcher rd=request.getRequestDispatcher("RegisteredDrivers.jsp");
     rd.forward(request,response);
+          
+            
+
             
             
        

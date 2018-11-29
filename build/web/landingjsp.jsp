@@ -167,7 +167,7 @@
                         </div>
                         
                         <div class="card-action" >
-                            <a href="RouteDetails.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                            <a href="RouteDetail" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
