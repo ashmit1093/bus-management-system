@@ -98,13 +98,7 @@
                  
                     </div>
                 </li>
-                
-                <li>
-                  
-                    <a class="waves-effect container " href="FeedBack.jsp">FeedBack
-                        <i class="fa fa-comment fa-2x black-text"></i>
-                    </a>
-                </li>
+
                 <li>
                   
                     <a class="waves-effect container " href="Guidelines.jsp">Guidelines
@@ -230,14 +224,14 @@
                 <div class="col s12 m6 l4 center-align">
                     <div class="card z-depth-3">
                         <div class="card-content">
-                            <i class="fa fa-bus fa-4x"></i>
-                            <h5> Notice</h5>
+                            <i class="fa fa-comment fa-4x black-text"></i>
+                            <h5> FeedBack</h5>
                             <p>
-                                Placement Drive,Outings
+                                Student Facing problems
                             </p>
                         </div>
                         <div class="card-action" >
-                            <a href="Notice.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
+                            <a href="FeedBack.jsp" class="btn-floating btn-large btn tooltipped" data-position="bottom" data-tooltip="View">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>

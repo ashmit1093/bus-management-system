@@ -266,10 +266,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>    \n");
       out.write("                        </div>\n");
       out.write("                        \n");
-      out.write("                            <span style=\"color:red\">");
-      out.print((request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage"));
-      out.write("</span>\n");
-      out.write("                        \n");
+      out.write("\n");
       out.write("\n");
       out.write("                        <div class=\"card-content\">\n");
       out.write("                            <div class=\"input-field black-text col s12 \">\n");
@@ -278,8 +275,7 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <label>Institute</label><br>\n");
       out.write("                                <select>\n");
       out.write("                                    <option value=\"1\">CSOET</option>>\n");
-      out.write("                                    <option value=\"2\">CBS</option>\n");
-      out.write("                                    <option value=\"3\">CSPS</option>\n");
+      out.write("                               \n");
       out.write("                              \n");
       out.write("                                </select>\n");
       out.write("                            </div>\n");

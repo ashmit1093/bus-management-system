@@ -64,6 +64,14 @@
         <servlet-name>Add_bus</servlet-name>
         <servlet-class>mypack.Add_bus</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FeedBack_Form</servlet-name>
+        <servlet-class>mypack.FeedBack_Form</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Check_FeedBack</servlet-name>
+        <servlet-class>mypack.Check_FeedBack</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet2</servlet-name>
         <url-pattern>/LoginServlet2</url-pattern>
@@ -127,6 +135,14 @@
     <servlet-mapping>
         <servlet-name>Add_bus</servlet-name>
         <url-pattern>/Add_bus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FeedBack_Form</servlet-name>
+        <url-pattern>/FeedBack_Form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Check_FeedBack</servlet-name>
+        <url-pattern>/Check_FeedBack</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

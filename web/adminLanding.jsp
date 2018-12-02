@@ -188,7 +188,7 @@
                             </div>
                         
                             <div class="card-action" >
-                                <a href="#" class="btn-floating btn-large btn tooltipped grey" data-position="bottom" data-tooltip="View">
+                                <a href="Check_FeedBack" class="btn-floating btn-large btn tooltipped grey" data-position="bottom" data-tooltip="View">
                                     <i class="material-icons">add</i>
                                 </a>
                             </div>

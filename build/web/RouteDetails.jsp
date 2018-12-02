@@ -137,7 +137,7 @@
                                 
                                 <td class="flow-text"><%=r.stop4%></td>
                                 <td class="flow-text"><%=r.Arrival4%></td>
-             d                   <td class="flow-text">-</td>
+                                <td class="flow-text">-</td>
                                 
                             <tr>
         

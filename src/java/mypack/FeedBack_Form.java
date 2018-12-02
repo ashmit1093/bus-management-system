@@ -32,7 +32,7 @@ import static org.omg.CORBA.ShortSeqHelper.id;
  *
  * @author ashmitbakshi
  */
-public class Add_bus extends HttpServlet {
+public class FeedBack_Form extends HttpServlet {
 
      @Override
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,30 +40,22 @@ public class Add_bus extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         
-        String n = request.getParameter("bus_number");
-        String o = request.getParameter("bus_color");
-        String p = request.getParameter("bus_reg_year");
-        String q = request.getParameter("bus_capacity");
-        String r = request.getParameter("bus_engine");
-        String s = request.getParameter("bus_weight");
+        String n = request.getParameter("id");
+        String o = request.getParameter("email");
+        String p = request.getParameter("textarea");
+
 
         
-          if (n.isEmpty() || o.isEmpty() || p.isEmpty() || q.isEmpty() || r.isEmpty() || s.isEmpty() ) {
-            out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
-            out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
-            out.println("<script>");
-            out.println("$(document).ready(function(){");
-            out.println("swal('Please fill All Details',' ','error');");
-            out.println("});");
-            out.println("</script>");  
+          if (n.isEmpty() || o.isEmpty() || p.isEmpty() ) {
+              
                     
              
-            RequestDispatcher rd = request.getRequestDispatcher("AddBus.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("FeedBack.jsp");
             
             rd.include(request, response);
           }
         
-          else{
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
@@ -72,15 +64,13 @@ public class Add_bus extends HttpServlet {
             
             
             
-           String sql_query = "INSERT INTO bus_details values(?,?,?,?,?,?)";
+           String sql_query = "INSERT INTO feedback_form values(?,?,?)";
            PreparedStatement pst = conn.prepareStatement(sql_query);
            
             pst.setString(1,n);
             pst.setString(2,o);
             pst.setString(3,p);
-            pst.setString(4,q);
-            pst.setString(5,r);
-            pst.setString(6,s);
+ 
 
             
             int i = pst.executeUpdate();
@@ -90,16 +80,17 @@ public class Add_bus extends HttpServlet {
                 out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
                 out.println("<script>");
                 out.println("$(document).ready(function(){");
-                out.println("swal('Bus Added',' ','success');");
+                out.println("swal('FeedBack Submitted',' ','success');");
                 out.println("});");
                 out.println("</script>");
-                RequestDispatcher rd = request.getRequestDispatcher("adminLanding.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("FeedBack.jsp");
                 rd.include(request,response);
             }
-            
-        }catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+          
+
         }
+        catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
         }
         
 

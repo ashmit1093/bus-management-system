@@ -70,10 +70,10 @@
                     </div>
                     <div class="col s12  l4 offset-l4">
                          
-                        <form>
+                        <form action="FeedBack_Form" method="post">
                             <div class="input-field">
                                 <i class="material-icons prefix">person</i>
-                                <input type="text" name="name" id="user">
+                                <input type="text" name="id" id="user">
                                 <label for="user">Username</label>
                             </div>
                              <div class="input-field">
@@ -83,7 +83,7 @@
                             </div>
                             <div class="input-field">
                                <i class="material-icons prefix">mode_edit</i>
-                               <textarea id="textarea2" class="materialize-textarea" data-length="80"></textarea>
+                               <textarea id="textarea2" class="materialize-textarea" data-length="80" name="textarea"></textarea>
                                <label for="textarea2">Textarea</label>
                             </div>
                             <div class="input-field">
@@ -126,7 +126,7 @@
                 $('input#input_text, textarea#textarea2').characterCounter();
             });
             $(document).ready(function(){
-                swal ("Incorrect username or password"," ","error")
+                swal ("Form Submitted"," ","success");
             });
              $(document).ready(function(){
                 $('.tooltipped').tooltip();

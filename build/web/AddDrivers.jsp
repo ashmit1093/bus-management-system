@@ -136,7 +136,11 @@
                 $('input#input_text, textarea#textarea2').characterCounter();
             });
             $(document).ready(function(){
-                swal ("Incorrect username or password"," ","error")
+                swal ("Driver Added"," ","success");
+            });
+            
+            $(document).ready(function(){
+                swal ("Please Fill All the Details"," ","error");
             });
              $(document).ready(function(){
                 $('.tooltipped').tooltip();

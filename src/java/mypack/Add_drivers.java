@@ -49,49 +49,63 @@ public class Add_drivers extends HttpServlet {
         String t = request.getParameter("bus_number");
         String u = request.getParameter("bus_capacity");
         
-          if (n.isEmpty() || o.isEmpty() || p.isEmpty() || q.isEmpty() || r.isEmpty() || s.isEmpty() || t.isEmpty() || u.isEmpty()) {
+          if (n.isEmpty() || o.isEmpty() || p.isEmpty() || q.isEmpty() || r.isEmpty() || s.isEmpty() || t.isEmpty() || u.isEmpty()) 
+          {
               
-                    
-             
-            RequestDispatcher rd = request.getRequestDispatcher("AddDrivers.jsp");
-            
-            rd.include(request, response);
-          }
-        
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
-             
-           
-            
-            
-            
-           String sql_query = "INSERT INTO driver_detail values(?,?,?,?,?,?,?,?,?)";
-           PreparedStatement pst = conn.prepareStatement(sql_query);
-           
-            pst.setString(1,m);
-            pst.setString(2,n);
-            pst.setString(3,o);
-            pst.setString(4,p);
-            pst.setString(5,q);
-            pst.setString(6,r);
-            pst.setString(7,s);
-            pst.setString(8,t);
-            pst.setString(9,u);
-            
-            int i = pst.executeUpdate();
-            if(i>0)
-            {
-                out.println("Registered");
+                out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+                out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
+                out.println("<script>");
+                out.println("$(document).ready(function(){");
+                out.println("swal('Please fill All Details',' ','error');");
+                out.println("});");
+                out.println("</script>");
+                RequestDispatcher rd = request.getRequestDispatcher("AddDrivers.jsp");
+                rd.include(request,response);        
             }
-            
-        }
-        catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
         
-
-
+          else {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Ashking123");
+             
+           
+            
+            
+            
+                String sql_query = "INSERT INTO driver_detail values(?,?,?,?,?,?,?,?,?)";
+                PreparedStatement pst = conn.prepareStatement(sql_query);
+           
+                pst.setString(1,m);
+                pst.setString(2,n);
+                pst.setString(3,o);
+                pst.setString(4,p);
+                pst.setString(5,q);
+                pst.setString(6,r);
+                pst.setString(7,s);
+                pst.setString(8,t);
+                pst.setString(9,u);
+            
+                int i = pst.executeUpdate();
+                if(i>0)
+                {
+                    out.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>");
+                    out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>");
+                    out.println("<script>");
+                    out.println("$(document).ready(function(){");
+                    out.println("swal('Driver Added',' ','success');");
+                    out.println("});");
+                    out.println("</script>");
+                    RequestDispatcher rd = request.getRequestDispatcher("adminLanding.jsp");
+                    rd.include(request,response);
+                }
+            }catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            }   
+        }
      }
 }
+        
+
+
+     
+ 

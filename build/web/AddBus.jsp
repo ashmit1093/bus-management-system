@@ -75,7 +75,7 @@
                             </div>
                             <div class="input-field">
                                
-                                <input type="text" name="bus_reg_year" id="number" class="validate">
+                                <input type="text" name="bus_reg_year" id="number" class="validate datepicker">
                                 <label for="number">Bus-Registration-Year</label>
                             </div>
                             <div class="input-field">
@@ -127,12 +127,16 @@
               $(document).ready(function() {
                 $('input#input_text, textarea#textarea2').characterCounter();
             });
+            
             $(document).ready(function(){
-                swal ("Incorrect username or password"," ","error")
+                swal ("Please Fill All Details"," ","error");
             });
              $(document).ready(function(){
                 $('.tooltipped').tooltip();
-                });
+            });
+              $(document).ready(function(){
+                 $('.datepicker').datepicker();
+            });
         </script>
     </body>
 </html>

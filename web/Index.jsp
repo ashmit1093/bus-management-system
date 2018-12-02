@@ -225,8 +225,7 @@
                             </div>    
                         </div>
                         
-                            <span style="color:red"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></span>
-                        
+
 
                         <div class="card-content">
                             <div class="input-field black-text col s12 ">
@@ -235,8 +234,7 @@
                                 <label>Institute</label><br>
                                 <select>
                                     <option value="1">CSOET</option>>
-                                    <option value="2">CBS</option>
-                                    <option value="3">CSPS</option>
+                               
                               
                                 </select>
                             </div>
