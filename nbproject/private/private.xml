@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/Add_drivers.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/AddDrivers.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/adminLanding.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/Index.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/AdminFeedBack.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/FeedBack.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/LOGO2.PNG</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/web/RegisteredDrivers.jsp</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/LoginServlet2.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/FeedBack_Form.java</file>
+            <file>file:/Users/ashmitbakshi/NetBeansProjects/JavaProject/src/java/mypack/AdminDrivers.java</file>
+        </group>
     </open-files>
 </project-private>

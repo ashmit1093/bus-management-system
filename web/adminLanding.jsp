@@ -43,9 +43,7 @@
              .side-nav li>a {
                 padding: 0 16px;
             }
-            body{
-                background: #eceff1;
-            }
+            
             
              
 
@@ -136,7 +134,7 @@
                         </div>
                         
                         <div class="card-action" >
-                            <a href="detail" class="btn-floating btn-large btn tooltipped grey" data-position="bottom" data-tooltip="View">
+                            <a href="detail" class="btn-floating btn-large btn tooltipped " data-position="bottom" data-tooltip="View">
                                     <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -153,7 +151,7 @@
                         </div>
                         
                         <div class="card-action" >
-                            <a href="AdminDrivers" class="btn-floating btn-large btn tooltipped grey " data-position="bottom" data-tooltip="View">
+                            <a href="AdminDrivers" class="btn-floating btn-large btn tooltipped " data-position="bottom" data-tooltip="View">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -170,7 +168,7 @@
                             </div>
                         
                             <div class="card-action" >
-                                <a href="AdminBus" class="btn-floating btn-large btn tooltipped grey" data-position="bottom" data-tooltip="View">
+                                <a href="AdminBus" class="btn-floating btn-large btn tooltipped " data-position="bottom" data-tooltip="View">
                                     <i class="material-icons">add</i>
                                 </a>
                             </div>
@@ -188,7 +186,7 @@
                             </div>
                         
                             <div class="card-action" >
-                                <a href="Check_FeedBack" class="btn-floating btn-large btn tooltipped grey" data-position="bottom" data-tooltip="View">
+                                <a href="Check_FeedBack" class="btn-floating btn-large btn tooltipped " data-position="bottom" data-tooltip="View">
                                     <i class="material-icons">add</i>
                                 </a>
                             </div>
